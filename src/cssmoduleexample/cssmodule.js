@@ -1,4 +1,5 @@
-import styles from './cssmodule.css';
+// import styles from './cssmodule.css';
+import styles from './cssmodule.module.css'
 
 function Sidenote({ type, title, children }) {
   const className = `${styles.wrapper} ${styles[type]}`;

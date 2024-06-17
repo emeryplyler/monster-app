@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Tests.css";
+import { Link } from "react-router-dom";
 
 const monsterList = ["dragon", "gryphon", "dog"];
 
@@ -13,7 +14,15 @@ const compiledElement = React.createElement(
   monsterList.length
 );
 
+const pageHeader = (
+  <header className="page-header">
+    ghfjghjfgh{'\n'}
+    <Link to='/cssmoduleexample'> Other Page </Link>
+  </header>
+);
+
 const message = {
+  className: 'message',
   content: "Just ate at “Les Corbeaux En Colère”. Wonderful little venue!",
   published: "2024-03-14T15:09:26.000Z",
   author: {
@@ -25,7 +34,7 @@ const message = {
 };
 
 const messageElement = (
-  <article style={{ background: "#555555" }}>
+  <article style={{ background: "#555555" }} className="messageElement">
     <header>
       <img
         src={message.author.avatarSrc}
@@ -43,7 +52,7 @@ const messageElement = (
 function ContactCard({ name, job, email }) {
   return (
     <li className="contact-card">
-      <h2>{name}</h2>
+      <h2 className="name-header">{name}</h2>
       <dl>
         <dt>Job</dt>
         <dd>{job}</dd>
@@ -157,18 +166,19 @@ const Buttons = (
 
 // the return statement can only return one item
 // instead of putting everything inside a div, you can use a fragment which won't mess up formatting stuff
-function FragmentExample() {
-  return (
-    <>
-      <h1>Welcome to my homepage!</h1>
-      <p>Don't forget to sign the guestbook!</p>
-    </>
-  );
-}
+// function FragmentExample() {
+//   return (
+//     <>
+//       <h1>Welcome to my homepage!</h1>
+//       <p>Don't forget to sign the guestbook!</p>
+//     </>
+//   );
+// }
 
 function Tests() {
   return (
     <div className="tests">
+      {pageHeader}
       {compiledElement}
       {messageElement}
       {ContactCards}
