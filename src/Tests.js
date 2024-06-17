@@ -120,6 +120,15 @@ function ContactListMaker() {
   return <ul>{elements}</ul>;
 }
 
+// you can also do this if there's a repeating string or something
+// the `` and the ${} will replace the text 'item.id' with the actual id
+// {data.map((item) => (
+//   <Avatar 
+//     src={`/img/avatars/${item.id}.png`} 
+//     alt={item.alt} 
+//   />
+// ))}
+
 function ButtonMaker({ color, children }) {
   return (
     <button
