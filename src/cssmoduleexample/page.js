@@ -1,5 +1,6 @@
 import Sidenote from "./cssmodule"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function CSSModuleApp() {
     return (
@@ -16,7 +17,8 @@ export function CSSModuleApp() {
             
 
             <p>
-                <Link to='/'> Home Page </Link>
+                {/* <Link to='/'> Home Page </Link> */}
+                <Link href="/">Home</Link>
             </p>
             
         </div>
