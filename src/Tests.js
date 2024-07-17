@@ -150,6 +150,7 @@ function ButtonMaker({ color, children }) {
         padding: 16,
         margin: 8,
       }}
+      onClick={() => (window.alert("A"))}
     >
       {children}
     </button>

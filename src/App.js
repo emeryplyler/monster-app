@@ -1,47 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Tests from './Tests';
-import React from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import Tests from "./Tests";
+import React from "react";
+import Monsters from "./monsters/Monsters";
+import MonsterDetails from "./monsters/MonsterDetails";
 
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import { CSSModuleApp } from './cssmoduleexample/cssmoduleapp';
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { CSSModuleApp } from "./cssmoduleexample/cssmoduleapp";
 
 function App() {
-    return (
-      <HashRouter>
-        <Routes>
-          <Route path='/' element={<Tests/>} />
-          <Route path='/cssmoduleexample' element={<CSSModuleApp/>} />
-        </Routes>
-      </HashRouter>
-    // )
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-
-  //       <a href='/cssmoduleexample/cssmoduleapp.js'>
-  //         CSS module test page
-  //       </a>
-
-  //       <div>
-  //         {Tests()}
-  //       </div>
-        
-  //     </header>
-  //   </div>
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Monsters />} />
+        <Route path="/cssmoduleexample" element={<CSSModuleApp />} />
+        <Route path="/tests" element={<Tests />} />
+        <Route path="/monsters/:monsterid" element={<MonsterDetails />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
