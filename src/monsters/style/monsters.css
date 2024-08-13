@@ -9,4 +9,13 @@
 .monster-item {
     max-width: 25%;
     max-height: 25%;
+    cursor: pointer;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.longdesc {
+    margin: auto;
+    max-width: 60%;
 }

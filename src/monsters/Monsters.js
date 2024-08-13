@@ -1,15 +1,18 @@
 import React from "react";
 import "./style/monsters.css";
+import { Navigate, redirect, useNavigate } from "react-router-dom";
 // import styles from "./style/monsters.css";
 
-const temporaryList = [
+export const temporaryList = [
   {
     name: "Dragon",
     type: "Draconic",
     pic: "/monster_images/Dragon.png",
     description:
       "Scaly, reptilian creatures capable of flight and breathing fire.",
-    index: 0
+    index: 0,
+    habitat: "Plains, mountains, caves",
+    longdesc: "Dragons have had an influence on human culture and society for millenia. As beings of immense power and intelligence, they were widely feared and revered. While the reputation of dragons is one of a destructive, mindless beast, the majority of dragons prefer a solitary life in the remote wilderness."
   },
   {
     name: "Unicorn",
@@ -17,13 +20,18 @@ const temporaryList = [
     pic: "/monster_images/unicorn.png",
     description:
       "Beings resembling horses with sparkling narwhal tusks. They are said to have a strong sense of justice.",
-    index: 1
+    index: 1,
+    habitat: "Unknown",
+    longdesc: "Little is known about the unicorn despite the fact that they are one of the most well-known mystical creatures."
   },
 ];
 
-function MonsterItem({ name, type, pic, description, index }) {
+
+function MonsterItem({ name, type, pic, description, index, idx }) {
+  const nav = useNavigate();
+  const url = `/monsters/${idx}`;
   return (
-    <li className="monster-item">
+    <li key={index} className="monster-item" onClick={() => nav(url)}>
       <h2 className="monster-name-header">{name}</h2>
       <dl>
         <dt>Name: </dt>
@@ -46,6 +54,7 @@ function GenerateList() {
       pic={item.pic}
       description={item.description}
       key={item.index}
+      idx={item.index}
     />
   ));
 
@@ -59,12 +68,18 @@ const title = <h1 className="title">Monster Encyclopedia</h1>;
 function Monsters() {
   return (
     <>
-      {title}
-      {/* {buttons} */}
+      <div style={{backgroundColor:"rgb(200, 155, 243)", padding:"10px"}}>
+        <div style={{backgroundColor:"white", maxWidth:"25%", margin:"auto", padding:"1px"}}>
+          {title}
+        </div>
+        
+        {/* {buttons} */}
 
-      <ul className="monster-list">
-        <GenerateList />
-      </ul>
+        <ul className="monster-list">
+          <GenerateList />
+        </ul>
+      </div>
+      
     </>
   );
 }
