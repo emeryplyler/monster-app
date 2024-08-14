@@ -68,8 +68,8 @@ const title = <h1 className="title">Monster Encyclopedia</h1>;
 function Monsters() {
   return (
     <>
-      <div style={{backgroundColor:"rgb(200, 155, 243)", padding:"10px"}}>
-        <div style={{backgroundColor:"white", maxWidth:"25%", margin:"auto", padding:"1px"}}>
+      <div style={{backgroundColor:"rgb(200, 155, 243)", padding:"5vh", minHeight:"100vh"}}>
+        <div style={{backgroundColor:"white", maxWidth:"25%", margin:"auto", padding:"1vh"}}>
           {title}
         </div>
         

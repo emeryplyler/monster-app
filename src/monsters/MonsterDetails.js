@@ -8,23 +8,41 @@ function MonsterDetails() {
   const params = useParams();
   // TODO: error handling
   let id = params.monsterid;
-  let monster = temporaryList[id];
+  let monster;
+  if (id) {
+    monster = temporaryList[id];
+  } else {
+    return;
+  }
 
   return (
     <>
-      <div style={{backgroundColor:"rgb(200, 155, 243)", padding:"20px"}}>
-        <div style={{backgroundColor:"white", maxWidth:"60%", margin:"auto", padding:"10px", paddingBottom: "30px"}}>
+      <div style={{ backgroundColor: "rgb(200, 155, 243)", padding: "6vh" }}>
+        <div
+          style={{
+            backgroundColor: "white",
+            maxWidth: "60%",
+            margin: "auto",
+            padding: "4vh",
+            paddingBottom: "8vh",
+          }}
+        >
           <h1>{monster.name}</h1>
-          <h2>Family: <span style={{fontWeight:"normal"}}>{monster.type}</span></h2>
-          <h2>Habitat: <span style={{fontWeight:"normal"}}>{monster.habitat}</span></h2>
+          <h2>
+            Family: <span style={{ fontWeight: "normal" }}>{monster.type}</span>
+          </h2>
+          <h2>
+            Habitat:{" "}
+            <span style={{ fontWeight: "normal" }}>{monster.habitat}</span>
+          </h2>
           <div className="longdesc">
             <p>{monster.longdesc}</p>
           </div>
           <img src={monster.pic} alt="" />
-          <div><a href="/">Back</a></div>
-          
+          <div>
+            <a href="/">Back</a>
+          </div>
         </div>
-        
       </div>
     </>
   );
