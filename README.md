@@ -1,10 +1,6 @@
-# Getting Started with Create React App
+# Monster Encyclopedia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+The Monster Encyclopedia was created as an exercise in [React](https://github.com/facebook/create-react-app) and SQL.
 
 ### `npm start`
 
