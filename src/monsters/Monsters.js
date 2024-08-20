@@ -1,7 +1,6 @@
 import React from "react";
 import "./style/monsters.css";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
-// import styles from "./style/monsters.css";
 
 export const temporaryList = [
   {
@@ -28,7 +27,7 @@ export const temporaryList = [
 
 
 function MonsterItem({ name, type, pic, description, index, idx }) {
-  const nav = useNavigate();
+  const nav = useNavigate(); // Create and link page using monster id
   const url = `/monsters/${idx}`;
   return (
     <li key={index} className="monster-item" onClick={() => nav(url)}>

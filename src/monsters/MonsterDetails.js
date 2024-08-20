@@ -1,16 +1,14 @@
 import React from "react";
 import "./style/monsters.css";
 import { useParams } from "react-router-dom";
-// import getList from "./Monsters";
 import { temporaryList } from "./Monsters"; // TODO: replace this with data fetching from database
 
 function MonsterDetails() {
   const params = useParams();
-  // TODO: error handling
   let id = params.monsterid;
   let monster;
   if (id) {
-    monster = temporaryList[id];
+    monster = temporaryList[id]; // add logic to see if we're using the database or the backup array
   } else {
     return;
   }
