@@ -1,6 +1,8 @@
 # Monster Encyclopedia
 
-The Monster Encyclopedia was created as an exercise in [React](https://github.com/facebook/create-react-app) and SQL.
+The Monster Encyclopedia was created as an exercise in [React](https://github.com/facebook/create-react-app) and SQL. It posts and retrieves data to and from a MSSQL database and displays it on a webpage created with React.
+
+## Commands
 
 ### `npm start`
 
